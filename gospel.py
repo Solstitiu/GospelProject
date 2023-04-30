@@ -7,9 +7,10 @@ import json
 url_template = "https://bible-api.com/{book}{chapter}:{verse}"
 
 # Define the list of books of the Bible
-books = ['2kings', '1chronicles', '2chronicles', 'ezra', 'nehemiah', 'esther', 'job', 'psalms', 'proverbs', 'ecclesiastes', 'songofsolomon', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah', 'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 'john', 'acts', 'romans', '1corinthians', '2corinthians', 'galatians', 'ephesians', 'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon', 'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation']
 books_of_bible=["genesis", "exodus", "leviticus", "numbers", "deuteronomy", "joshua", "judges", "ruth", "1samuel", "2samuel", "1kings", "2kings", "1chronicles", "2chronicles", "ezra", "nehemiah", "esther", "job", "psalms", "proverbs", "ecclesiastes", "songofsolomon", "isaiah", "jeremiah", "lamentations", "ezekiel", "daniel", "hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi", "matthew", "mark", "luke", "john", "acts", "romans", "1corinthians", "2corinthians", "galatians", "ephesians", "philippians", "colossians", "1thessalonians", "2thessalonians", "1timothy", "2timothy", "titus", "philemon", "hebrews", "james", "1peter", "2peter", "1john", "2john", "3john", "jude", "revelation"]
-image_url = 'https://i.pinimg.com/originals/7d/ea/9c/7dea9c3521b8209b1d90779d4e62dc43.jpg' # The image that will be used as a background for the text
+
+# The image that will be used as a background for the text
+image_url = 'https://i.pinimg.com/originals/7d/ea/9c/7dea9c3521b8209b1d90779d4e62dc43.jpg' 
 
 
 def create_payload(image_url, text):
@@ -25,7 +26,8 @@ def create_payload(image_url, text):
     }
     encoded_params = "&".join([f"{key}={value}" for key, value in payload.items()])
 
-    base_url = 'https://textoverimage.moesif.com/image?' # https://textoverimage.moesif.com/#documentation
+    # https://textoverimage.moesif.com/#documentation
+    base_url = 'https://textoverimage.moesif.com/image?'
     return f"{base_url}{encoded_params}"
 
 
